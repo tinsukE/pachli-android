@@ -191,8 +191,7 @@ class ViewMediaActivity : BaseActivity(), MediaActionsListener {
     }
 
     override fun onMediaTap() {
-        val isToolbarVisible = !viewModel.isToolbarVisible
-        viewModel.onToolbarVisibilityChange(isToolbarVisible)
+        val isToolbarVisible = viewModel.toggleToolbarVisibility()
 
         val visibility = if (isToolbarVisible) View.VISIBLE else View.INVISIBLE
         val alpha = if (isToolbarVisible) 1.0f else 0.0f
